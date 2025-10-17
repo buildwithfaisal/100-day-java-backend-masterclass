@@ -1,5 +1,19 @@
 This is the Official repository of **100 Days of Java Backend Development From Beginner/Newbie to deploying Microservices** on YouTube
 
+## Take Your Learning Further
+
+This repository and the **free 100 Days Java Backend YouTube playlist** give you everything you need to **learn, practice, and build real projects**.
+
+For those who want a **more premium and guided experience**, our **Udemy courses** offer:
+
+- Build end-to-end projects like a full-stack eCommerce app and deploy them to production.  
+- Includes **React and full-stack fundamentals** (JavaScript, REST APIs, etc.).  
+- Get **support and guidance** whenever you're stuck.  
+- **Affordable, one-time access** to enhance your learning journey.
+
+You can fully follow along with the free YouTube playlist, or choose Udemy for a **more immersive, structured experience**.
+
+
 # The Ultimate Java and Spring Boot Mastery Roadmap
 
 Welcome to your one-stop-shop for mastering Java and Spring Boot! This repository offers a comprehensive learning experience with high-quality resources and community support. Dive into over 150+ hours of premium content, with everything you need to excel at Java and Spring Boot development.
