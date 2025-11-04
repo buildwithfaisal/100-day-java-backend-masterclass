@@ -8,14 +8,15 @@ public class JDBCDemo {
     public static void main(String[] args) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
             System.out.println("Connected to the Database!");
-//            insertStudent(conn, "Alice", "alice@gmail.com");
-            updateStudent(conn, 1, "Bob", "alice@gmail.com");
+            insertStudent(conn, "Alice", "alice@gmail.com");
+            updateStudent(conn, 2, "Bob", "alice@gmail.com");
             selectStudents(conn);
-            deleteStudent(conn,1);
+//            deleteStudent(conn,1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 
     private static void insertStudent(Connection conn, String name, String email) {
         String sql = "INSERT INTO student (name, email) VALUES ('" + name + "','" + email + "')";
@@ -45,11 +46,15 @@ public class JDBCDemo {
 
 
     private static void updateStudent(Connection conn, int id, String name, String email) {
-        String sql = "UPDATE student SET name = '" + name + "', email = '" + email + "' WHERE id=" + id;
+//        String sql = "UPDATE student SET name = '" + name + "', email = '" + email + "' WHERE id=" + id;
+        String sql = "UPDATE student SET name = ?, email = ? WHERE id = ?";
 //       UPDATE student SET name = 'Alice', email = 'email@gmail.com'
 //       WHERE id = 10;
-        try (Statement stmt = conn.createStatement()) {
-            int rows = stmt.executeUpdate(sql);
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, name);
+            pstmt.setString(2, email);
+            pstmt.setInt(3, id);
+            int rows = pstmt.executeUpdate();
             System.out.println("UPDATED: " + rows);
         } catch (SQLException e) {
             e.printStackTrace();
